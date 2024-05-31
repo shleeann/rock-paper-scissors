@@ -15,23 +15,23 @@ function getComputerChoice() {
     }
 }
 
-getComputerChoice();
+// getComputerChoice();
 
 // *** Get Human Choice ***
 function getHumanChoice() {
     let humanChoice = prompt("Rock, paper, or scissors?").toLowerCase();
 
-    switch(humanChoice) {
-        case "rock":
-            return console.log("rock");
-            break;
-        case "paper":
-            return console.log("paper");
-            break;
-        case "scissors":
-            return console.log("scissors");
-            break;
+if (humanChoice == "rock") {
+        return console.log("rock");
+    } else if (humanChoice == "paper") {
+        return console.log("paper");
+    } else if (humanChoice == "scissors") {
+        return console.log("scissors");
+    } else if (humanChoice == null || humanChoice == '') {
+        return alert("cancelled");
+    } else {
+        return alert("try again");
     }
 }
 
-getHumanChoice()
+getHumanChoice();
