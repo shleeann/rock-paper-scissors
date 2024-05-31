@@ -16,3 +16,22 @@ function getComputerChoice() {
 }
 
 getComputerChoice();
+
+// *** Get Human Choice ***
+function getHumanChoice() {
+    let humanChoice = prompt("Rock, paper, or scissors?").toLowerCase();
+
+    switch(humanChoice) {
+        case "rock":
+            return console.log("rock");
+            break;
+        case "paper":
+            return console.log("paper");
+            break;
+        case "scissors":
+            return console.log("scissors");
+            break;
+    }
+}
+
+getHumanChoice()
