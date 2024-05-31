@@ -1,3 +1,7 @@
+// *** Global ***
+const humanScore = 0;
+const computerScore = 0;
+
 // *** Get Computer Choice ***
 function getComputerChoice() {
     const computerChoice = Math.floor(Math.random() * 3);
@@ -34,4 +38,4 @@ if (humanChoice == "rock") {
     }
 }
 
-getHumanChoice();
+// getHumanChoice();
