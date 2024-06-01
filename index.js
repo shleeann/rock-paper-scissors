@@ -1,4 +1,8 @@
 // *** Global ***
+const playRock = "rock";
+const playPaper = "paper";
+const playScissors = "scissors";
+
 const humanScore = 0;
 const computerScore = 0;
 
@@ -8,13 +12,13 @@ function getComputerChoice() {
 
     switch(computerChoice) {
         case 0:
-            return console.log("rock");
+            return console.log(playRock);
             break;
         case 1:
-            return console.log("paper");
+            return console.log(playPaper);
             break;
         case 2:
-            return console.log("scissors");
+            return console.log(playScissors);
             break;
     }
 }
@@ -26,15 +30,13 @@ function getHumanChoice() {
     let userInput = prompt("Rock, paper, or scissors?").toLowerCase();
 
 if (userInput == "rock") {
-        return console.log("rock");
+        return console.log(playRock);
     } else if (userInput == "paper") {
-        return console.log("paper");
+        return console.log(playPaper);
     } else if (userInput == "scissors") {
-        return console.log("scissors");
-    } else if (userInput == null || userInput == "") {
-        return alert("Cancelled.");
+        return console.log(playScissors);
     } else {
-        return alert("Try again.");
+        return console.log("Try again.")
     }
 }
 
