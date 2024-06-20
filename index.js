@@ -1,45 +1,44 @@
-// *** Global ***
-const playRock = "rock";
-const playPaper = "paper";
-const playScissors = "scissors";
-
+// *** Global Variables ***
 const humanScore = 0;
 const computerScore = 0;
 
 // *** Get Computer Choice ***
 function getComputerChoice() {
-    const computerChoice = Math.floor(Math.random() * 3);
+    const computerInput = Math.floor(Math.random() * 3);
 
-    switch(computerChoice) {
+    switch(computerInput) {
         case 0:
-            return console.log(playRock);
+            return "ROCK";
             break;
         case 1:
-            return console.log(playPaper);
+            return "PAPER";
             break;
         case 2:
-            return console.log(playScissors);
+            return "SCISSORS";
             break;
     }
 }
-
-getComputerChoice();
 
 // *** Get Human Choice ***
 function getHumanChoice() {
-    let userInput = prompt("Rock, paper, or scissors?").toLowerCase();
+    return prompt("Rock, paper, or scissors?").toUpperCase();
+}
 
-if (userInput == "rock") {
-        return console.log(playRock);
-    } else if (userInput == "paper") {
-        return console.log(playPaper);
-    } else if (userInput == "scissors") {
-        return console.log(playScissors);
+// *** Play Single Round ***
+function playRound(humanChoice, computerChoice) {
+
+    if (humanChoice === computerChoice) {
+        return `Draw.`;
+    } else if (humanChoice === "ROCK" && computerChoice === "SCISSORS" || humanChoice === "SCISSORS" && computerChoice === "PAPER" || humanChoice === "PAPER" && computerChoice === "ROCK") {
+        return `You win! ${humanChoice} beats ${computerChoice}.`;
+    } else if (humanChoice === "ROCK" && computerChoice === "PAPER" || humanChoice === "PAPER" && computerChoice === "SCISSORS" || humanChoice === "SCISSORS" && computerChoice === "ROCK") {
+        return `You lose! ${computerChoice} beats ${humanChoice}.`;
     } else {
-        return console.log("Try again.")
+        return `Cannot compute ${humanChoice}.`;
     }
 }
 
-getHumanChoice();
+let humanSelection = getHumanChoice();
+let computerSelection = getComputerChoice();
 
-// *** Single Round ***
+console.log(playRound(humanSelection, computerSelection));
